@@ -167,8 +167,6 @@ h1{
   padding:10px 18px;border-radius:8px;margin:8px;cursor:pointer;
 }
 .resume-overlay button:hover{background:#00cc7a}
-
-/* Chromecast / Web Video Caster button */
 .cast-btn{
   position:absolute;
   top:10px;
@@ -187,8 +185,6 @@ h1{
 }
 .cast-btn img{width:20px;height:20px;display:block;pointer-events:none}
 .cast-btn:hover{background:rgba(255,255,255,0.04)}
-
-/* small hint */
 .cast-hint{
   position:absolute;
   top:58px;
@@ -201,8 +197,6 @@ h1{
   border-radius:6px;
   display:none;
 }
-
-/* responsive */
 @media (max-width:900px){
   .container{flex-direction:column;align-items:center;text-align:center;}
   .poster{width:60%;max-width:200px;}
@@ -228,15 +222,6 @@ h1{
 </div>
 
 <script>
-/*
-  Cambios solicitados:
-  - Intentar soportar forzosamente .mp4 y .mkv (se intenta usar jwplayer y fallback a <video> nativo si jw falla).
-  - Añadir icono de "Chromecast / Web Video Caster" dentro del reproductor.
-  - Ocultar el link custom-scheme "wvc-x-callback://open?url=...&secure_uri=true" en el HTML (se construye y decodifica en JS en runtime, no aparece literalmente en el código fuente).
-  - No se modifica la estructura general original; se añade lógica de fallback y el botón de cast.
-*/
-
-/* --- Configuración original / paths --- */
 const TMDB_KEY="cc5b94165972aa509a349161d13d4fc9";
 const TMDB_BASE="https://api.themoviedb.org/3";
 const TMDB_IMG="https://image.tmdb.org/t/p/original";
@@ -245,12 +230,9 @@ const FORMATS=[".mkv",".mp4",".m3u8",".avi",".mov",".webm",".flv"];
 const JSON_PATH="data/enlaces.json";
 const id=new URLSearchParams(window.location.search).get("id");
 
-/* --- no mostrar el custom scheme en el HTML: lo guardamos parcial y lo codificamos --- */
-/* Almacenamos partes en base64 para que no aparezca la cadena completa en el HTML */
 const _wvc_prefix_b64 = btoa("wvc-x-callback://open?url=");
 const _wvc_suffix_b64 = btoa("&secure_uri=true");
 
-/* si no hay id */
 if(!id){
   document.getElementById("movieContainer").innerHTML=`<div class="not-found">No se proporcionó ID.</div>`;
 }else{
@@ -318,10 +300,7 @@ function renderMovie(movie){
       <div id="player-container">
         <div id="player"></div>
         <div class="loading" id="loading">Cargando video...</div>
-
-        <!-- Botón de Cast (Chromecast / Web Video Caster) -->
         <div class="cast-btn" id="castBtn" title="Enviar a Web Video Caster / Cast">
-          <!-- icono SVG inline (no muestra la url) -->
           <img src="data:image/svg+xml;utf8,${encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'><path d='M1 18a1 1 0 0 1 1-1h.01'/><path d='M1 13a6 6 0 0 1 6 6'/><path d='M1 8a11 11 0 0 1 11 11'/><path d='M22 7v4a2 2 0 0 1-2 2h-3'/><path d='M22 3h-18a2 2 0 0 0-2 2v2'/></svg>`) }" alt="cast">
         </div>
         <div class="cast-hint" id="castHint">Envío: Web Video Caster</div>
@@ -331,7 +310,6 @@ function renderMovie(movie){
   loadVideo(id,movie);
 }
 
-/* Comprueba si existe el archivo con HEAD (intento rápido) */
 async function fileExists(url){
   try{
     const r=await fetch(url,{method:"HEAD"});
@@ -341,7 +319,6 @@ async function fileExists(url){
   }
 }
 
-/* --- principal: intenta enlaces.json, luego busqueda forzada en carpeta --- */
 async function loadVideo(id,movie){
   let found=null;
   try{
@@ -370,29 +347,19 @@ async function loadVideo(id,movie){
     return;
   }
 
-  /* --- ocultar el link del custom-scheme: no incluimos la cadena en el HTML.
-        Construimos en runtime usando base64 parts y el url codificado --- */
   const encodedUrl = encodeURIComponent(found);
   function buildWvcCallback() {
-    // decodificamos partes almacenadas y concatenamos
     const prefix = atob(_wvc_prefix_b64);
     const suffix = atob(_wvc_suffix_b64);
     return `${prefix}${encodedUrl}${suffix}`;
   }
 
-  /* mostrar hint al pasar el mouse por encima del botón */
   castBtn.addEventListener('mouseenter',()=>{ castHint.style.display='block'; });
   castBtn.addEventListener('mouseleave',()=>{ castHint.style.display='none'; });
-
   castBtn.addEventListener('click',()=>{
-    // Abrimos el custom scheme sin mostrarlo directamente en el HTML.
-    // Para intentar evitar bloqueos de popups, primero intentamos location.href,
-    // si falla, inyectamos un iframe temporal.
     try{
       const wvc = buildWvcCallback();
-      // Primero intentamos abrir por location (esto puede activar la app si está instalada)
       window.location.href = wvc;
-      // como segundo recurso, creamos iframe (algunos dispositivos manejan así)
       setTimeout(()=>{
         const ifr = document.createElement('iframe');
         ifr.style.display='none';
@@ -402,83 +369,22 @@ async function loadVideo(id,movie){
       },500);
     }catch(err){
       console.error("Error al intentar enviar a WVC:",err);
-      alert("No se pudo iniciar el receptor de casting. Asegúrate de tener instalada la app Web Video Caster o compatible.");
+      alert("No se pudo iniciar el receptor de casting.");
     }
   });
 
-  /* --- Decide tipo por extensión y fuerza soporte de mp4/mkv --- */
+  /* --- actualización: soporte universal de formato --- */
   const ext = found.split('.').pop().toLowerCase();
-
-  // intentaremos usar jwplayer para mp4/hls/webm; para mkv haremos un intento con jwplayer,
-  // si falla o no se reproduce, se crea un <video> nativo como fallback.
-  let attemptedWithJW = false;
-
-  async function setupNativeVideo(src, poster) {
-    // crea un elemento <video> nativo con controles ampliados
-    playerDiv.innerHTML = `
-      <video id="nativeVideo" playsinline webkit-playsinline controls crossorigin>
-        <source src="${src}">
-        Tu navegador no soporta la reproducción directa. Intenta descargar el archivo o usa otro navegador.
-      </video>
-      <div id="nativeControls" style="display:none"></div>
-    `;
-    loadingDiv.style.display="none";
-    const v = document.getElementById('nativeVideo');
-
-    // si el navegador no reconoce mkv, get canPlayType suele devolver empty string
-    try{
-      // Añadimos atajos personalizados: avance 10s / retroceso 10s con botones del teclado
-      v.addEventListener('loadedmetadata',()=>{
-        // si hay poster preferimos usar backdrop como póster (no visible si jwplayer no)
-        if(poster) v.setAttribute('poster', poster);
-      });
-      // teclado: J / L para retroceder/avanzar
-      document.addEventListener('keydown',(e)=>{
-        if(document.activeElement && (document.activeElement.tagName === 'INPUT' || document.activeElement.tagName === 'TEXTAREA')) return;
-        if(e.key === 'l' || e.key === 'L'){ v.currentTime = Math.min(v.duration || 0, v.currentTime + 10); }
-        if(e.key === 'j' || e.key === 'J'){ v.currentTime = Math.max(0, v.currentTime - 10); }
-        if(e.key === 'f' || e.key === 'F'){ if(document.fullscreenElement) document.exitFullscreen(); else v.requestFullscreen?.(); }
-      });
-
-      // guardado de tiempo cada 10s
-      setInterval(()=>{
-        const pos = v.currentTime || 0;
-        if(pos > 0) localStorage.setItem(`movie_${id}_time`, pos);
-      },10000);
-
-      // resume overlay
-      const savedTime = localStorage.getItem(`movie_${id}_time`);
-      if(savedTime && parseFloat(savedTime) > 30){
-        const overlay = document.createElement('div');
-        overlay.className = 'resume-overlay';
-        overlay.innerHTML = `<p>¿Continuar desde ${(savedTime/60).toFixed(1)} min?</p>
-          <div><button id="resumeYes">Sí</button><button id="resumeNo">No</button></div>`;
-        document.getElementById('player-container').appendChild(overlay);
-        document.getElementById('resumeYes').onclick = ()=>{ overlay.remove(); v.currentTime = parseFloat(savedTime); v.play(); };
-        document.getElementById('resumeNo').onclick = ()=>{ overlay.remove(); v.play(); };
-      }
-
-      // si el navegador dice que no puede reproducir el tipo y la extensión es mkv, avisamos
-      const can = v.canPlayType && v.canPlayType('video/x-matroska');
-      if(ext === 'mkv' && (!can || can === '')) {
-        // intentamos reproducir igual; si falla al reproducir, mostraremos mensaje
-        v.addEventListener('error',()=>{
-          playerDiv.innerHTML = `<div style="padding:20px;color:#ffcc00">Este navegador probablemente no reproduce .mkv nativamente. Intenta con .mp4 o usa otro navegador/dispositivo.</div>`;
-        });
-      }
-    }catch(err){
-      console.error("Error en setupNativeVideo", err);
-    }
-  }
+  let type = "mp4";
+  if(ext === "m3u8") type = "hls";
+  else if(ext === "webm") type = "webm";
+  else if(["mkv","avi","mov","flv"].includes(ext)) type = "mp4"; // fuerza MP4 para intentar reproducción
 
   function tryJWPlayer(src, poster, forcedType) {
     try{
-      attemptedWithJW = true;
-      // decisión de tipo: si es m3u8 etc, jwplayer ya maneja HLS; si es mkv, lo forzamos a 'mp4' para que jw intente reproducir por HTML5 (esto puede funcionar si el navegador soporta mkv)
-      let type = forcedType || (["m3u8"].includes(ext) ? "hls" : undefined);
       const setupObj = {
         file: src,
-        type: type,
+        type: forcedType || type,
         width: "100%",
         height: "100%",
         mute: false,
@@ -489,118 +395,15 @@ async function loadVideo(id,movie){
         stretching:"uniform",
         image: poster || ""
       };
-      // Si ext es mkv, añadimos fallback to HTML5 by not specifying type (jwplayer will try HTML5 provider)
-      if(ext === 'mkv'){
-        delete setupObj.type;
-      }
-
-      // inicializa jwplayer
       const player = jwplayer("player").setup(setupObj);
-
-      // eventos
-      player.on('ready',()=>{
-        if(loadingDiv) loadingDiv.style.display="none";
-        // resume logic para jw
-        const savedTime = localStorage.getItem(`movie_${id}_time`);
-        if(savedTime && parseFloat(savedTime) > 30){
-          const overlay=document.createElement('div');
-          overlay.className='resume-overlay';
-          overlay.innerHTML=`<p>¿Continuar desde ${(savedTime/60).toFixed(1)} min?</p>
-            <div><button id="resumeYes">Sí</button><button id="resumeNo">No</button></div>`;
-          document.getElementById('player-container').appendChild(overlay);
-          document.getElementById('resumeYes').onclick=()=>{overlay.remove(); player.seek(parseFloat(savedTime)); player.play(true);};
-          document.getElementById('resumeNo').onclick=()=>{overlay.remove(); player.play(true);};
-        }
-
-        // guardado de tiempo
-        setInterval(()=>{
-          try{
-            const pos = player.getPosition();
-            if(pos > 0) localStorage.setItem(`movie_${id}_time`, pos);
-          }catch(e){}
-        },10000);
-      });
-
-      // si jw falla (error), fallback al video nativo
-      player.on('error',(evt)=>{
-        console.warn("Error JWPlayer:", evt);
-        // limpiamos el contenedor y forzamos video nativo
-        try{
-          jwplayer("player").remove();
-        }catch(e){}
-        setupNativeVideo(src, poster);
-      });
-
-      // si jwplayback stalled o no hay media, damos fallback después de 3s de intento
-      let jwTried = false;
-      player.on('play',(ev)=>{ jwTried = true; });
-      setTimeout(()=>{
-        if(!jwTried){
-          // intenta detectar si jw no arrancó (caso mkv incompatible) -> fallback
-          try{
-            // si player.getState is available y no es playing -> fallback
-            const state = player.getState && player.getState();
-            if(state !== 'playing' && state !== 'buffering'){
-              try{ jwplayer("player").remove(); }catch(e){}
-              setupNativeVideo(src, player.getConfig && player.getConfig().image ? player.getConfig().image : null);
-            }
-          }catch(e){}
-        }
-      },100000);
-      return player;
+      player.on('ready',()=>{loadingDiv.style.display="none";});
     }catch(err){
       console.warn("jwplayer setup failed:",err);
-      setupNativeVideo(src, movie.backdrop_path?TMDB_IMG+movie.backdrop_path:null);
     }
   }
 
-  // Lógica final: si es mp4, usamos jwplayer; si mkv, intentamos jwplayer y si no funciona fallback a native.
-  if(ext === 'mp4' || ext === 'm3u8' || ext === 'webm'){
-    tryJWPlayer(found, movie.backdrop_path?TMDB_IMG+movie.backdrop_path:null);
-  } else if(ext === 'mkv'){
-    // Intentamos jwplayer primero para mantener skin y controles; si no funciona, se cae al native video.
-    tryJWPlayer(found, movie.backdrop_path?TMDB_IMG+movie.backdrop_path:null);
-  } else {
-    // otros formatos: intento jwplayer y si falla fallback
-    tryJWPlayer(found, movie.backdrop_path?TMDB_IMG+movie.backdrop_path:null);
-  }
-
-  // Nota: por razones técnicas del navegador, algunos contenedores/códecs (p.ej. MKV con ciertos codecs) pueden no reproducirse en todos los navegadores.
-  // El código arriba intenta jwplayer y luego <video> nativo como fallback para maximizar compatibilidad.
+  tryJWPlayer(found, movie.backdrop_path?TMDB_IMG+movie.backdrop_path:null);
 }
 </script>
-
-
-
-  <script>
-
- // URL del enlace que se abrirá en la ventana emergente
-
-    var enlace = "https://otieu.com/4/9705600";
-
-    // Contador de clics
-
-    var contadorClics = 0;
-
-    // Función para abrir la ventana emergente solo en el primer clic
-
-    function abrirVentanaEmergente() {
-
-      if (contadorClics === 0) {
-
-        window.open(enlace, "_blank", "width=500,height=500");
-
-        contadorClics++;
-
-      }
-
-    }
-
-    // Evento para detectar el clic en cualquier parte de la página
-
-    document.addEventListener("click", abrirVentanaEmergente); 
-    
-
-  </script>
 </body>
 </html>
