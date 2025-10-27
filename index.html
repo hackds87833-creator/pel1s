@@ -2061,6 +2061,91 @@ async function cargarPeliculas() {
 document.addEventListener('DOMContentLoaded', cargarPeliculas);
 </script>
 
+<script>
+// ===============================
+// ✅ GUARDAR ESTADO COMPLETO
+// ===============================
+function guardarEstadoCompleto() {
+  const estado = {
+    scrollY: window.scrollY || document.documentElement.scrollTop,
+    seccionActiva: document.querySelector('.tab.active')?.id || null,
+    modalAbierto: !!document.querySelector('.modal.show'),
+    peliculaModal: document.querySelector('.modal.show')?.dataset.peliculaId || null,
+    filasScroll: Array.from(document.querySelectorAll('.fila')).map(f => f.scrollLeft)
+  };
+  localStorage.setItem('estadoIndex', JSON.stringify(estado));
+}
 
+// ===============================
+// ✅ RESTAURAR ESTADO COMPLETO
+// ===============================
+function restaurarEstadoCompleto() {
+  const estado = JSON.parse(localStorage.getItem('estadoIndex') || '{}');
+
+  // Restaurar scroll vertical
+  if (estado.scrollY !== undefined) window.scrollTo(0, estado.scrollY);
+
+  // Restaurar pestaña activa
+  if (estado.seccionActiva) {
+    const tab = document.getElementById(estado.seccionActiva);
+    if (tab) {
+      document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+      document.querySelectorAll('.tab-content').forEach(c => c.style.display = 'none');
+      const contenido = document.querySelector(`#${tab.dataset.target}`);
+      if (contenido) contenido.style.display = 'block';
+    }
+  }
+
+  // Restaurar scroll horizontal de filas
+  if (estado.filasScroll) {
+    const filas = document.querySelectorAll('.fila');
+    filas.forEach((fila, i) => {
+      fila.scrollLeft = estado.filasScroll[i] || 0;
+    });
+  }
+
+  // Restaurar modal si estaba abierto
+  if (estado.modalAbierto && estado.peliculaModal) {
+    const modal = document.querySelector(`.modal[data-pelicula-id="${estado.peliculaModal}"]`);
+    if (modal) {
+      modal.classList.add('show');
+      // Opcional: cargar info dinámica de la película si no está cargada
+      // cargarPeliculaModal(estado.peliculaModal);
+    }
+  }
+}
+
+// ===============================
+// ✅ EVENTOS
+// ===============================
+
+// Guardar al hacer scroll vertical
+let scrollTimeout;
+window.addEventListener('scroll', () => {
+  clearTimeout(scrollTimeout);
+  scrollTimeout = setTimeout(guardarEstadoCompleto, 200);
+});
+
+// Guardar scroll horizontal en filas
+document.querySelectorAll('.fila').forEach(fila => {
+  fila.addEventListener('scroll', () => guardarEstadoCompleto());
+});
+
+// Guardar al abrir/cerrar modales
+document.querySelectorAll('.modal').forEach(modal => {
+  modal.addEventListener('show', guardarEstadoCompleto);
+  modal.addEventListener('hide', guardarEstadoCompleto);
+});
+
+// Guardar al hacer click en enlaces para ir a otra página
+document.addEventListener('click', e => {
+  const link = e.target.closest('a');
+  if (link) guardarEstadoCompleto();
+});
+
+// Restaurar estado al cargar la página
+document.addEventListener('DOMContentLoaded', restaurarEstadoCompleto);
+      </script>
 </body>
 </html>
