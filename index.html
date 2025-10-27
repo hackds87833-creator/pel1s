@@ -7,7 +7,7 @@
 
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
-
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <style>
       
 
@@ -44,15 +44,7 @@
       color: #fff;
       font-family: 'Roboto', sans-serif;
     }
-    body::before {
-      content: '';
-      position: fixed;
-      top: 0; left: 0;
-      height: 100%; width: 100%;
-      background: linear-gradient(to bottom, rgba(0,0,0,0.8), rgba(0,0,0,0.9)),
-        url('https://pbs.twimg.com/media/Gp972OIWMAAeIHy?format=jpg&name=4096x4096') no-repeat center center/cover;
-      z-index: -1;
-    }
+    
     .small-note {color: #bbb; font-size: .85rem; text-align:center; padding:10px 0;}
     nav {
       background: rgba(0,0,0,0.90);
@@ -85,7 +77,9 @@
     }
     .rating {
       position: absolute; top: 6px; left: 1px;
-      background: rgba(0,0,0,0.7);
+      background: linear-gradient(180deg, rgba(0,0,0,0.45), rgba(0,0,0,0.25));
+backdrop-filter: blur(10px);
+-webkit-backdrop-filter: blur(10px);
       border-radius: 10px; padding: 3px 6px;
       display: flex; flex-direction: column; align-items: center; font-size: 0.7rem;
     }
@@ -135,25 +129,82 @@
       0% {background-position: -200% 0;}
       100% {background-position: 200% 0;}
     }
-    .search-container {
-      position: absolute; left: 15px; top: 10px;
-      display: flex; align-items: center;
-    }
-    .search-icon {
-      cursor: pointer; color: #fff;
-      font-size: 28px; transition: transform 0.3s ease;
-    }
-    .search-icon:hover {transform: scale(1.1);}
-    #buscar {
-      background: rgba(0,0,0,0.8); color: #fff;
-      border: none; border-radius: 20px;
-      padding: 5px 10px; width: 0;
-      font-size: 1rem; margin-left: 10px;
-      outline: none; opacity: 0;
-      transition: width 0.4s ease, opacity 0.4s ease;
-    }
-    #buscar::placeholder {color: #888;}
-    .search-container.active #buscar {width: 180px; opacity: 1;}
+/* ===== BUSCADOR MODERNO COMPATIBLE ===== */
+.search-container {
+  position: absolute;
+  left: 15px;
+  top: 10px;
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0);
+  border-radius: 50px;
+  height: 40px;
+  overflow: hidden;
+  transition: all 0.4s ease-in-out;
+  padding: 5px;
+}
+
+.search-container.active {
+  background:#000
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 15px #000;
+  width: 180px;
+  transition: all 0.5s cubic-bezier(0.000, 0.105, 0.035, 1.570);
+}
+
+/* Ícono de búsqueda */
+.search-container .search-icon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: transparent;
+  color: #fff;
+  font-size: 24px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.search-container .search-icon:hover {
+  transform: scale(1.15);
+  box-shadow: 0 0 10px transparent;
+}
+
+/* Campo de búsqueda */
+#buscar {
+  width: 0;
+  opacity: 0;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #fff;
+  font-size: 1rem;
+  padding: 0 10px;
+  transition: width 0.5s ease, opacity 0.5s ease;
+}
+
+.search-container.active #buscar {
+  width: 180px;
+  opacity: 1;
+}
+
+/* Placeholder elegante */
+#buscar::placeholder {
+  color: #000;
+  font-weight: 300;
+}
+
+/* Responsivo */
+@media (max-width: 600px) {
+  .search-container.active {
+    width: 150px;
+  }
+  #buscar {
+    font-size: 0.9rem;
+  }
+}  
     @media (max-width: 900px) {.movie-grid {grid-template-columns: repeat(4,1fr);}}
     @media (max-width: 600px) {.movie-grid {grid-template-columns: repeat(3,1fr); gap: 10px;} .btn-ver-mas {width: 50%;}}
     @media (min-width: 1600px) {
@@ -161,6 +212,82 @@
     grid-template-columns: repeat(4, 1fr);
   }
     }
+    /* ====== MENÚ MODERNO CON ICONOS Y EFECTOS ====== */
+ul#menu.sidenav {
+  background: rgba(10, 10, 10, 0.8) !important;
+  backdrop-filter: blur(12px);
+  border-right: 2px solid rgba(0, 255, 200, 0.1);
+  box-shadow: 3px 0 25px rgba(0, 0, 0, 0.6);
+  padding-top: 80px !important;
+  width: 260px !important;
+  transition: all 0.4s ease-in-out;
+}
+
+/* Ítems del menú */
+ul#menu.sidenav li {
+  margin: 5px 0 !important;
+}
+
+/* Enlaces del menú */
+ul#menu.sidenav a {
+  display: flex !important;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 20px !important;
+  color: #dcdcdc !important;
+  font-weight: 500 !important;
+  text-decoration: none;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+}
+
+/* Íconos */
+ul#menu.sidenav a i {
+  color: #fff !important;
+  font-size: 24px !important;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* Hover */
+ul#menu.sidenav a:hover {
+  background: rgba(0, 255, 198, 0.1) !important;
+  color: #00ffc6 !important;
+  transform: translateX(8px);
+}
+ul#menu.sidenav a:hover i {
+  transform: scale(1.2);
+  color: #00ffc6 !important;
+}
+
+/* Efecto de línea lateral brillante */
+ul#menu.sidenav a::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 3px;
+  background: linear-gradient(180deg, #00ffc6, transparent);
+  opacity: 0;
+  transition: opacity 0.3s;
+  border-radius: 2px;
+}
+ul#menu.sidenav a:hover::before {
+  opacity: 1;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  ul#menu.sidenav {
+    width: 220px !important;
+  }
+  ul#menu.sidenav a {
+    font-size: 0.9rem;
+    padding: 12px 16px !important;
+  }
+}
+    
   </style>
 </head>
 
@@ -177,41 +304,46 @@
   </nav>
 
   <ul id="menu" class="sidenav">
-    <li><a href="go:tv"> Tv Online </a></li>
-     <li><a href="go:adult"> Tv Adult +18</a></li>
-    <li><a href="go:series"> Series </a></li>
-    <li><a href="go:anime"> Heintai +18 </a></li>
-    
-  </ul>
+  <li><a href="go:tv"><i class="material-icons">live_tv</i> Tv Online</a></li>
+  <li><a href="go:adult"><i class="material-icons">no_adult_content</i> Tv Adult +18</a></li>
+  <li><a href="go:series"><i class="material-icons">movie</i> Series</a></li>
+  <li><a href="go:anime"><i class="material-icons">no_adult_content</i> Heintai +18</a></li>
+</ul>
+  
 
   <div class="container">
     <div id="movieContainer" class="movie-grid"></div>
-    <button id="verMasBtn" class="btn-ver-mas" style="display:none;">Ver m谩s</button>
+    <button id="verMasBtn" class="btn-ver-mas" style="display:none;">Ver más</button>
   </div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  
   <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      M.Sidenav.init(document.querySelectorAll('.sidenav'));
-    });
+  document.addEventListener('DOMContentLoaded', function() {
+    M.Sidenav.init(document.querySelectorAll('.sidenav'));
+  });
 
-    const toggleSearch = document.getElementById("toggleSearch");
-    const searchContainer = document.querySelector(".search-container");
-    const inputBuscar = document.getElementById("buscar");
+  const toggleSearch = document.getElementById("toggleSearch");
+  const searchContainer = document.querySelector(".search-container");
+  const inputBuscar = document.getElementById("buscar");
 
-    toggleSearch.addEventListener("click", () => {
-      searchContainer.classList.toggle("active");
-      if (searchContainer.classList.contains("active")) inputBuscar.focus();
-      else {inputBuscar.blur(); inputBuscar.value = ""; inputBuscar.dispatchEvent(new Event("input"));}
-    });
+  toggleSearch.addEventListener("click", () => {
+    searchContainer.classList.toggle("active");
+    if (searchContainer.classList.contains("active")) inputBuscar.focus();
+    else {
+      inputBuscar.blur();
+      inputBuscar.value = "";
+      inputBuscar.dispatchEvent(new Event("input"));
+    }
+  });
 
-    const API_KEY = "cc5b94165972aa509a349161d13d4fc9";
-    const TMDB_URL = "https://api.themoviedb.org/3";
-    const IMG_URL = "https://image.tmdb.org/t/p/w500";
-    const PLACEHOLDER = "https://via.placeholder.com/500x750?text=No+Image";
+  const API_KEY = "cc5b94165972aa509a349161d13d4fc9";
+  const TMDB_URL = "https://api.themoviedb.org/3";
+  const IMG_URL = "https://image.tmdb.org/t/p/w500";
+  const PLACEHOLDER = "https://via.placeholder.com/500x750?text=No+Image";
 
-    const peliculasManual = [
-        { id: 293660 },
+  const peliculasManual = [
+    { id: 293660 },
   { id: 383498 },
   { id: 533535 },
         { id: 1724 },
@@ -972,178 +1104,198 @@
   { id: 1326106 },
   { id: 1405338 },
   { id: 1425045 },
-    ];
+  ];
 
-    let allMovies = [];
-    let estrenosMovies = [];
-    let genresMap = new Map();
-    let currentGenre = "Todas";
+  let allMovies = [];
+  let estrenosMovies = [];
+  let genresMap = new Map();
+  let currentGenre = "Todas";
 
-    const getFavorites = () => JSON.parse(localStorage.getItem("favoritos")) || [];
-    const saveFavorites = (favs) => localStorage.setItem("favoritos", JSON.stringify(favs));
+  const getFavorites = () => JSON.parse(localStorage.getItem("favoritos")) || [];
+  const saveFavorites = (favs) => localStorage.setItem("favoritos", JSON.stringify(favs));
 
-    function openMovie(id) {
-      localStorage.setItem("peliculasCache", JSON.stringify(allMovies));
-      window.location.href = `pelicula.html?id=${id}`;
-    }
+  function openMovie(id) {
+    localStorage.setItem("peliculasCache", JSON.stringify(allMovies));
+    window.location.href = `pelicula.html?id=${id}`;
+  }
 
-    function createMovieCard(movie) {
-      const imgSrc = movie.poster_path ? IMG_URL + movie.poster_path : PLACEHOLDER;
-      const rating = movie.vote_average ? movie.vote_average.toFixed(1) : "N/A";
-      const year = movie.release_date ? movie.release_date.slice(0,4) : "----";      
-      const favorites = getFavorites();
-      const isFavorite = favorites.includes(movie.id);
+  function createMovieCard(movie) {
+    const imgSrc = movie.poster_path ? IMG_URL + movie.poster_path : PLACEHOLDER;
+    const rating = movie.vote_average ? movie.vote_average.toFixed(1) : "N/A";
+    const year = movie.release_date ? movie.release_date.slice(0, 4) : "----";
+    const favorites = getFavorites();
+    const isFavorite = favorites.includes(movie.id);
 
-      const card = document.createElement("div");
-      card.classList.add("movie-card");
-      card.innerHTML = `
-        <img src="${imgSrc}" alt="${movie.title}" onclick="openMovie(${movie.id})">
-        <div class="rating">
-            <div class="year">${year}</div>
-          <div><i class="material-icons tiny">star</i>${rating}</div>
-          
-        </div>
-        <div class="favorite ${isFavorite ? "active" : ""}" data-id="${movie.id}">
-          <i class="material-icons">favorite</i>
-        </div>
-        <div class="movie-title">${movie.title}</div>
-      `;
-      card.querySelector(".favorite").addEventListener("click", (e) => {
-        e.stopPropagation();
-        const id = movie.id;
-        let favs = getFavorites();
-        if (favs.includes(id)) {
-          favs = favs.filter(f => f !== id);
-          e.currentTarget.classList.remove("active");
-        } else {
-          favs.push(id);
-          e.currentTarget.classList.add("active");
-        }
-        saveFavorites(favs);
-        if (currentGenre === "Favoritos") renderMovies("Favoritos");
-      });
-      setTimeout(() => card.classList.add("show"), 100);
-      return card;
-    }
-
-    function renderMovies(genre = "Todas", append = false) {
-      const container = document.getElementById("movieContainer");
-      const btnVerMas = document.getElementById("verMasBtn");
-      let moviesToShow = [];
-
-      if (genre === "Favoritos") {
-        const favs = getFavorites();
-        moviesToShow = allMovies.filter(m => favs.includes(m.id));
-      } else if (genre === "Estrenos 2025") {
-        moviesToShow = estrenosMovies;
-      } else if (genre === "Todas") {
-        moviesToShow = allMovies;
+    const card = document.createElement("div");
+    card.classList.add("movie-card");
+    card.innerHTML = `
+      <img src="${imgSrc}" alt="${movie.title}" onclick="openMovie(${movie.id})">
+      <div class="rating">
+        <div class="year">${year}</div>
+        <div><i class="material-icons tiny">star</i>${rating}</div>
+      </div>
+      <div class="favorite ${isFavorite ? "active" : ""}" data-id="${movie.id}">
+        <i class="material-icons">favorite</i>
+      </div>
+      <div class="movie-title">${movie.title}</div>
+    `;
+    card.querySelector(".favorite").addEventListener("click", (e) => {
+      e.stopPropagation();
+      const id = movie.id;
+      let favs = getFavorites();
+      if (favs.includes(id)) {
+        favs = favs.filter(f => f !== id);
+        e.currentTarget.classList.remove("active");
       } else {
-        moviesToShow = genresMap.get(genre) || [];
+        favs.push(id);
+        e.currentTarget.classList.add("active");
       }
+      saveFavorites(favs);
+      if (currentGenre === "Favoritos") renderMovies("Favoritos");
+    });
+    setTimeout(() => card.classList.add("show"), 100);
+    return card;
+  }
 
-      if (!append) container.innerHTML = "";
-      const start = append ? container.childElementCount : 0;
-      const nextMovies = moviesToShow.slice(start, start + 60);
+  function renderMovies(genre = "Todas", append = false) {
+    const container = document.getElementById("movieContainer");
+    const btnVerMas = document.getElementById("verMasBtn");
+    let moviesToShow = [];
 
-      btnVerMas.style.display = moviesToShow.length > start + nextMovies.length ? "block" : "none";
-      if (btnVerMas.style.display === "block") btnVerMas.onclick = () => renderMovies(genre, true);
-
-      nextMovies.forEach(() => {
-        const skeleton = document.createElement("div");
-        skeleton.classList.add("skeleton");
-        container.appendChild(skeleton);
-      });
-
-      setTimeout(() => {
-        container.querySelectorAll(".skeleton").forEach(s => s.remove());
-        nextMovies.forEach(movie => container.appendChild(createMovieCard(movie)));
-      }, 400);
+    if (genre === "Favoritos") {
+      const favs = getFavorites();
+      moviesToShow = allMovies.filter(m => favs.includes(m.id));
+    } else if (genre === "Estrenos 2025") {
+      moviesToShow = estrenosMovies;
+    } else if (genre === "Todas") {
+      moviesToShow = allMovies;
+    } else {
+      moviesToShow = genresMap.get(genre) || [];
     }
 
-    function renderTabs() {
-      const tabs = document.getElementById("genreTabs");
-      tabs.innerHTML = "";
-      const baseTabs = ["Todas", "Favoritos","Estrenos 2025"];
-      [...baseTabs, ...genresMap.keys()].forEach(tab => {
-        const el = document.createElement("div");
-        el.classList.add("tab-item");
-        el.textContent = tab;
-        if (tab === currentGenre) el.classList.add("active");
-        el.addEventListener("click", () => {
-          currentGenre = tab;
-          updateActiveTab();
-          renderMovies(tab);
-        });
-        tabs.appendChild(el);
+    if (!append) container.innerHTML = "";
+    const start = append ? container.childElementCount : 0;
+    const nextMovies = moviesToShow.slice(start, start + 60);
+
+    btnVerMas.style.display = moviesToShow.length > start + nextMovies.length ? "block" : "none";
+    if (btnVerMas.style.display === "block") btnVerMas.onclick = () => renderMovies(genre, true);
+
+    nextMovies.forEach(() => {
+      const skeleton = document.createElement("div");
+      skeleton.classList.add("skeleton");
+      container.appendChild(skeleton);
+    });
+
+    setTimeout(() => {
+      container.querySelectorAll(".skeleton").forEach(s => s.remove());
+      nextMovies.forEach(movie => container.appendChild(createMovieCard(movie)));
+    }, 400);
+  }
+
+  function renderTabs() {
+    const tabs = document.getElementById("genreTabs");
+    tabs.innerHTML = "";
+    const baseTabs = ["Todas", "Favoritos", "Estrenos 2025"];
+    [...baseTabs, ...genresMap.keys()].forEach(tab => {
+      const el = document.createElement("div");
+      el.classList.add("tab-item");
+      el.textContent = tab;
+      if (tab === currentGenre) el.classList.add("active");
+      el.addEventListener("click", () => {
+        currentGenre = tab;
+        updateActiveTab();
+        renderMovies(tab);
       });
-    }
+      tabs.appendChild(el);
+    });
+  }
 
-    function updateActiveTab() {
-      document.querySelectorAll(".tab-item").forEach(tab => {
-        tab.classList.toggle("active", tab.textContent === currentGenre);
+  function updateActiveTab() {
+    document.querySelectorAll(".tab-item").forEach(tab => {
+      tab.classList.toggle("active", tab.textContent === currentGenre);
+    });
+  }
+
+  async function loadMovies() {
+    try {
+      const responses = await Promise.all(
+        peliculasManual.map(p =>
+          fetch(`${TMDB_URL}/movie/${p.id}?api_key=${API_KEY}&language=es-MX`).then(r => r.json())
+        )
+      );
+
+      allMovies = responses.filter(r => r && r.id);
+      estrenosMovies = allMovies.filter(m => m.release_date && m.release_date.startsWith("2025"));
+
+      localStorage.setItem("peliculasCache", JSON.stringify(allMovies));
+
+      genresMap.clear();
+      allMovies.forEach(movie => {
+        if (movie.genres && movie.genres.length) {
+          movie.genres.forEach(g => {
+            if (!genresMap.has(g.name)) genresMap.set(g.name, []);
+            genresMap.get(g.name).push(movie);
+          });
+        } else {
+          if (!genresMap.has("Sin categoría")) genresMap.set("Sin categoría", []);
+          genresMap.get("Sin categoría").push(movie);
+        }
       });
-    }
 
-    async function loadMovies() {
-      try {
-        const responses = await Promise.all(
-          peliculasManual.map(p =>
-            fetch(`${TMDB_URL}/movie/${p.id}?api_key=${API_KEY}&language=es-MX`).then(r => r.json())
-          )
-        );
+      renderTabs();
+      renderMovies();
 
-        allMovies = responses.filter(r => r && r.id);
-        estrenosMovies = allMovies.filter(m => m.release_date && m.release_date.startsWith("2025"));
+      // 🔍 BÚSQUEDA MULTI-FRASE / MULTI-CAMPO + CONSERVA "VER MÁS"
+      inputBuscar.addEventListener("input", () => {
+        const q = inputBuscar.value.trim().toLowerCase();
+        const btnVerMas = document.getElementById("verMasBtn");
+        let list = [];
 
-        localStorage.setItem("peliculasCache", JSON.stringify(allMovies));
+        if (currentGenre === "Todas") list = allMovies;
+        else if (currentGenre === "Favoritos") {
+          const favs = getFavorites();
+          list = allMovies.filter(m => favs.includes(m.id));
+        } else if (currentGenre === "Estrenos 2025") list = estrenosMovies;
+        else list = genresMap.get(currentGenre) || [];
 
-        genresMap.clear();
-        allMovies.forEach(movie => {
-          if (movie.genres && movie.genres.length) {
-            movie.genres.forEach(g => {
-              if (!genresMap.has(g.name)) genresMap.set(g.name, []);
-              genresMap.get(g.name).push(movie);
+        const filtered = q === ""
+          ? list
+          : list.filter(m => {
+              const texto = `
+                ${m.title || ""}
+                ${m.original_title || ""}
+                ${m.overview || ""}
+                ${m.tagline || ""}
+                ${(m.genres || []).map(g => g.name).join(" ")}
+              `.toLowerCase();
+              return texto.includes(q);
             });
-          } else {
-            if (!genresMap.has("Sin categor铆a")) genresMap.set("Sin categor铆a", []);
-            genresMap.get("Sin categor铆a").push(movie);
-          }
-        });
 
-        renderTabs();
-        renderMovies();
+        const container = document.getElementById("movieContainer");
+        container.innerHTML = "";
+        filtered.slice(0, 30).forEach(movie => container.appendChild(createMovieCard(movie)));
 
-        inputBuscar.addEventListener("input", () => {
-          const q = inputBuscar.value.trim().toLowerCase();
-          let list = [];
-          if (currentGenre === "Todas") list = allMovies;
-          else if (currentGenre === "Favoritos") {
-            const favs = getFavorites();
-            list = allMovies.filter(m => favs.includes(m.id));
-          } else if (currentGenre === "Estrenos 2025") list = estrenosMovies;
-          else list = genresMap.get(currentGenre) || [];
-
-          const filtered = q === "" ? list : list.filter(m => m.title.toLowerCase().includes(q));
-          const container = document.getElementById("movieContainer");
-          container.innerHTML = "";
-          filtered.slice(0, 30).forEach(movie => container.appendChild(createMovieCard(movie)));
-          document.getElementById("verMasBtn").style.display = "none";
-        });
-      } catch (err) {
-        console.error("Error cargando pel铆culas:", err);
-      }
+        // 🔄 Mantiene el botón de "Ver más" activo solo cuando no hay búsqueda
+        if (q === "") {
+          btnVerMas.style.display = list.length > 60 ? "block" : "none";
+          btnVerMas.onclick = () => renderMovies(currentGenre, true);
+        } else {
+          btnVerMas.style.display = "none";
+        }
+      });
+    } catch (err) {
+      console.error("Error cargando películas:", err);
     }
+  }
 
-    loadMovies();
-  </script>
-  
+  loadMovies();
+</script>
   
   <script>
-    const numBats = 20; // cantidad de murci茅lagos
+    const numBats = 20; // cantidad de murciélagos
     for (let i = 0; i < numBats; i++) {
       const bat = document.createElement('span');
-      bat.textContent = '馃懟';
+      bat.textContent = '👻';
       bat.classList.add('bat');
       const size = 20 + Math.random() * 40;
       const top = Math.random() * 80;
@@ -1155,7 +1307,7 @@
       bat.style.animationDelay = `${delay}s`;
       // efecto de aleteo
       const flap = document.createElement('span');
-      flap.textContent = '🧟‍♂️';
+      flap.textContent = '👻';
       flap.style.display = 'inline-block';
       flap.style.animation = `flap ${0.5 + Math.random()}s ease-in-out infinite`;
       bat.textContent = '';
@@ -1165,6 +1317,15 @@
   </script>
   
   
-  
+  <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const trigger = document.querySelector('.sidenav-trigger');
+    const menu = document.getElementById('menu');
+    trigger.addEventListener('click', e => {
+      e.preventDefault();
+      menu.classList.toggle('open');
+    });
+  });
+</script>
 </body>
 </html>
