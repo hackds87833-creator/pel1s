@@ -241,7 +241,7 @@ const JSON_PATH="data/enlaces.json";
 const id=new URLSearchParams(window.location.search).get("id");
 
 const _wvc_prefix_b64 = btoa("wvc-x-callback://open?url=");
-const _wvc_suffix_b64 = btoa("&secure_uri=false");
+const _wvc_suffix_b64 = btoa("&secure_uri=true");
 
 if(!id){
   document.getElementById("movieContainer").innerHTML=`<div class="not-found">No se proporcionó ID.</div>`;
