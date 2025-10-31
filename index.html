@@ -1637,13 +1637,6 @@ function openGenreModal(genreName, moviesList) {
   modalCount.textContent = `${moviesList.length} elementos`;
   modalGrid.innerHTML = "";
 
-  // ordenar igual que antes
-  moviesList.sort((a,b) => {
-    const da = a.release_date ? new Date(a.release_date).getTime() : 0;
-    const db = b.release_date ? new Date(b.release_date).getTime() : 0;
-    if (db !== da) return db - da;
-    return (b.id || 0) - (a.id || 0);
-  });
 
   moviesList.forEach(m => modalGrid.appendChild(createMovieCard(m)));
 
