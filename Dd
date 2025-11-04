@@ -1,9 +1,5 @@
 #EXTM3U
 
-#PLAYLISTV: pltv-logo="https://1.bp.blogspot.com/-943HqfCPxQg/XaokWqg1OdI/AAAAAAAAAVc/1AoqfgHWi54FdXNpoEWGn20gvUy83YB6QCLcBGAsYHQ/s200/1.png" pltv-name="CANALES-CINE Y SERIES" pltv-description="Simple IPTV Player - PlayList Exported by the Simple IPTV Player app - Download in the PlayStore!" pltv-cover="https://playeriptv.com/assets/fundo-mini.png" pltv-author="Simple IPTV Player" pltv-site="https://playeriptv.com/app"
-
-#EXTINF:-1 tvg-logo="https://playeriptv.com/assets/favicons/apple-icon-120x120.png" group-title="CANALES-CINE Y SERIES", PlayList Exported by the Simple IPTV Player app - Download in the PlayStore!
-https://playeriptv.com/app
 
 #EXTINF:-1 tvg-logo="https://1.bp.blogspot.com/-943HqfCPxQg/XaokWqg1OdI/AAAAAAAAAVc/1AoqfgHWi54FdXNpoEWGn20gvUy83YB6QCLcBGAsYHQ/s200/1.png" group-title="CANALES-CINE Y SERIES", CINE - A&E (L)(1080)
 http://tv.diablotv.net:8080/live/izabel12345/Ib5YFrzBpA/9614.m3u8
