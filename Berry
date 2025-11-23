@@ -1,0 +1,9 @@
+#EXTM3U
+#EXTINF:-1 tvg-logo="" group-title="",1x1
+https://1a-1791.com/video/fwe2/09/s8/2/k/L/_/t/kL_tz.haa.tar?r_file=chunklist.m3u8&r_type=application%2Fvnd.apple.mpegurl&r_range=1656567296-1656599996
+#EXTINF:-1 tvg-logo="" group-title="",1x2
+https://1a-1791.com/video/fwe2/b4/s8/2/E/T/v/v/ETvvz.haa.tar?r_file=chunklist.m3u8&r_type=application%2Fvnd.apple.mpegurl&r_range=2012625920-2012665771
+#EXTINF:-1 tvg-logo="" group-title="",1x3
+https://1a-1791.com/video/fww1/df/s8/2/8/V/h/y/8Vhyz.haa.tar?r_file=chunklist.m3u8&r_type=application%2Fvnd.apple.mpegurl&r_range=1794916864-1794952337
+#EXTINF:-1 tvg-logo="" group-title="",1x4
+https://1a-1791.com/video/fww1/86/s8/2/C/6/q/A/C6qAz.haa.tar?r_file=chunklist.m3u8&r_type=application%2Fvnd.apple.mpegurl&r_range=1912649728-1912687539
