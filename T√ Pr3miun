@@ -1,0 +1,90 @@
+#EXTM3U
+
+
+#EXTINF:-1 tvg-logo="https://i.ibb.co/WWjGYg6W/Universal-Reality.png" group-title="TV || PREMIUM CHANNELS", PREMIUM | UNIVERSAL REALITY
+http://fivetv.org:25461/live/B78N65/N3421U/23850.m3u8
+
+#EXTINF:-1 tvg-logo="https://i.ibb.co/hR98mJq6/hbo.png" group-title="TV || PREMIUM CHANNELS", PREMIUM | HBO SUR
+http://fivetv.org:25461/live/B78N65/N3421U/24300.m3u8
+
+#EXTINF:-1 tvg-logo="https://i.ibb.co/PzCw9gtj/Golden.png" group-title="TV || PREMIUM CHANNELS", PREMIUM | GOLDEN
+http://fivetv.org:25461/live/B78N65/N3421U/24301.m3u8
+
+#EXTINF:-1 tvg-logo="http://miarea.vip:8080/images/caa67992b56f94f2c25b1a0413ecba54.png" group-title="TV || PREMIUM CHANNELS", PREMIUM | HBO HD (LATINO)
+http://fivetv.org:25461/live/B78N65/N3421U/24302.m3u8
+
+#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/commons/2/22/Universal_Channel_2013.png" group-title="TV || PREMIUM CHANNELS", PREMIUM | UNIVERSAL TV
+http://fivetv.org:25461/live/B78N65/N3421U/25795.m3u8
+
+#EXTINF:-1 tvg-logo="https://i.ibb.co/6b9LCMq/GOLDENPRIMNIERS.png" group-title="TV || PREMIUM CHANNELS", PREMIUM | GOLDEN PREMIER HD
+http://fivetv.org:25461/live/B78N65/N3421U/186479.m3u8
+
+#EXTINF:-1 tvg-logo="https://i.ibb.co/w6vZ5px/STARZESP.png" group-title="TV || PREMIUM CHANNELS", PREMIUM | STARZ ENCORE ESPANOL
+http://fivetv.org:25461/live/B78N65/N3421U/186480.m3u8
+
+#EXTINF:-1 tvg-logo="https://i.ibb.co/MBvTm7y/dhe.png" group-title="TV || PREMIUM CHANNELS", PREMIUM | DHE HD
+http://fivetv.org:25461/live/B78N65/N3421U/186481.m3u8
+
+#EXTINF:-1 tvg-logo="http://stalkertvlatinoplay.com/LOGOS/CINE/HBO.png" group-title="TV || PREMIUM CHANNELS", PREMIUM | HBO LATINO
+http://fivetv.org:25461/live/B78N65/N3421U/186482.m3u8
+
+#EXTINF:-1 tvg-logo="http://stalkertvlatinoplay.com/LOGOS/CINE/HBO.png" group-title="TV || PREMIUM CHANNELS", PREMIUM | HBO 2
+http://fivetv.org:25461/live/B78N65/N3421U/186483.m3u8
+
+#EXTINF:-1 tvg-logo="https://universalplus.com/assets/logo_comedy_hero.png" group-title="TV || PREMIUM CHANNELS", PREMIUM | UNIVERSAL COMEDY HD
+http://fivetv.org:25461/live/B78N65/N3421U/186484.m3u8
+
+#EXTINF:-1 tvg-logo="http://miarea.vip:8080/images/5290e121f398b2a63ed3b8b720b54d33.png" group-title="TV || PREMIUM CHANNELS", PREMIUM | UNIVERSAL CINEMA HD
+http://fivetv.org:25461/live/B78N65/N3421U/186485.m3u8
+
+#EXTINF:-1 tvg-logo="http://miarea.vip:8080/images/e5bacf48b8ec9875c34ede41ee2a0913.png" group-title="TV || PREMIUM CHANNELS", PREMIUM | UNIVERSAL PREMIER HD
+http://fivetv.org:25461/live/B78N65/N3421U/186486.m3u8
+
+#EXTINF:-1 tvg-logo="http://miarea.vip:8080/images/7b2900fcdb12cfc140ad2a6027f7e065.png" group-title="TV || PREMIUM CHANNELS", PREMIUM | UNIVERSAL CRIME HD
+http://fivetv.org:25461/live/B78N65/N3421U/186487.m3u8
+
+#EXTINF:-1 tvg-logo="https://static.epg.best/ar/UniversalChannel.ar.png" group-title="TV || PREMIUM CHANNELS", PREMIUM | STUDIO UNIVERSAL
+http://fivetv.org:25461/live/B78N65/N3421U/186488.m3u8
+
+#EXTINF:-1 tvg-logo="https://i.ibb.co/fSbvx7T/STAR22.png" group-title="TV || PREMIUM CHANNELS", PREMIUM | STAR CHANNEL HD
+http://fivetv.org:25461/live/B78N65/N3421U/186489.m3u8
+
+#EXTINF:-1 tvg-logo="http://stalkertvlatinoplay.com/LOGOS/CINE/GOLDENEDGE.png" group-title="TV || PREMIUM CHANNELS", PREMIUM | GOLDEN EDGE HD
+http://fivetv.org:25461/live/B78N65/N3421U/186490.m3u8
+
+#EXTINF:-1 tvg-logo="http://miarea.vip:8080/images/4cac40f10785feb06d22b9c2ef655d23.png" group-title="TV || PREMIUM CHANNELS", PREMIUM | GOLDEN HD
+http://fivetv.org:25461/live/B78N65/N3421U/186491.m3u8
+
+#EXTINF:-1 tvg-logo="http://miarea.vip:8080/images/cfb6c6930418d4e47810cb3c82cf8ffa.png" group-title="TV || PREMIUM CHANNELS", PREMIUM | GOLDEN PLUS FHD
+http://fivetv.org:25461/live/B78N65/N3421U/186492.m3u8
+
+#EXTINF:-1 tvg-logo="https://i.ibb.co/bPRQG6P/hboext1.png" group-title="TV || PREMIUM CHANNELS", PREMIUM | HBO XTREME
+http://fivetv.org:25461/live/B78N65/N3421U/186493.m3u8
+
+#EXTINF:-1 tvg-logo="http://stalkertvlatinoplay.com/LOGOS/CINE/HBO.png" group-title="TV || PREMIUM CHANNELS", PREMIUM | HBO HD
+http://fivetv.org:25461/live/B78N65/N3421U/186494.m3u8
+
+#EXTINF:-1 tvg-logo="http://miarea.vip:8080/images/ab81cb3e1f5f55ad886bde01dcde7724.png" group-title="TV || PREMIUM CHANNELS", PREMIUM | HBO MUNDI HD
+http://fivetv.org:25461/live/B78N65/N3421U/186496.m3u8
+
+#EXTINF:-1 tvg-logo="http://stalkertvlatinoplay.com/LOGOS/CINE/HBOPLUS.png" group-title="TV || PREMIUM CHANNELS", PREMIUM | HBO PLUS FHD
+http://fivetv.org:25461/live/B78N65/N3421U/186497.m3u8
+
+#EXTINF:-1 tvg-logo="http://stalkertvlatinoplay.com/LOGOS/CINE/HBOPLUS.png" group-title="TV || PREMIUM CHANNELS", PREMIUM | HBO PLUS HD
+http://fivetv.org:25461/live/B78N65/N3421U/186498.m3u8
+
+#EXTINF:-1 tvg-logo="http://stalkertvlatinoplay.com/LOGOS/CINE/HBOPOP.png" group-title="TV || PREMIUM CHANNELS", PREMIUM | HBO POP HD
+http://fivetv.org:25461/live/B78N65/N3421U/186499.m3u8
+
+#EXTINF:-1 tvg-logo="http://miarea.vip:8080/images/d120fdf3444442524d11bb15a8a6e361.png" group-title="TV || PREMIUM CHANNELS", PREMIUM | HBO SIGNATURE HD
+http://fivetv.org:25461/live/B78N65/N3421U/186500.m3u8
+
+#EXTINF:-1 tvg-logo="http://miarea.vip:8080/images/6ea796d2cc6be935f471325a6929784f.png" group-title="TV || PREMIUM CHANNELS", PREMIUM | HBO FAMILY
+http://fivetv.org:25461/live/B78N65/N3421U/187565.m3u8
+
+#EXTINF:-1 tvg-logo="http://miarea.vip:8080/images/c6e4c7cd969b554647e613d820e2abbd.png" group-title="TV || PREMIUM CHANNELS", PREMIUM | PARAMOUNT
+http://fivetv.org:25461/live/B78N65/N3421U/188847.m3u8
+
+#EXTINF:-1 tvg-logo="https://i.ibb.co/h1g4TvHh/Showtime.png" group-title="TV || PREMIUM CHANNELS", SHOWTIME
+http://fivetv.org:25461/live/B78N65/N3421U/338676.m3u8
+
