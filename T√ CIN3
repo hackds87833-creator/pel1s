@@ -1,0 +1,156 @@
+#EXTM3U
+
+
+#EXTINF:-1 tvg-logo="https://i.ibb.co/k6hpzxkN/Pop-Corn.png" group-title="TV || 24/7 CINE", CINE DISNEY PIXAR 1 HD
+http://fivetv.org:25461/live/B78N65/N3421U/24490.m3u8
+
+#EXTINF:-1 tvg-logo="https://i.ibb.co/k6hpzxkN/Pop-Corn.png" group-title="TV || 24/7 CINE", CINE MARVEL STUDIO HD
+http://fivetv.org:25461/live/B78N65/N3421U/24495.m3u8
+
+#EXTINF:-1 tvg-logo="https://i.ibb.co/k6hpzxkN/Pop-Corn.png" group-title="TV || 24/7 CINE", CINE MARVEL ANIMADO HD
+http://fivetv.org:25461/live/B78N65/N3421U/24496.m3u8
+
+#EXTINF:-1 tvg-logo="https://i.ibb.co/k6hpzxkN/Pop-Corn.png" group-title="TV || 24/7 CINE", CINE PPV LATINOS 1
+http://fivetv.org:25461/live/B78N65/N3421U/75171.m3u8
+
+#EXTINF:-1 tvg-logo="https://i.ibb.co/k6hpzxkN/Pop-Corn.png" group-title="TV || 24/7 CINE", CINE PPV LATINOS 2
+http://fivetv.org:25461/live/B78N65/N3421U/75173.m3u8
+
+#EXTINF:-1 tvg-logo="https://i.ibb.co/k6hpzxkN/Pop-Corn.png" group-title="TV || 24/7 CINE", CINE PPV LATINOS 3
+http://fivetv.org:25461/live/B78N65/N3421U/75174.m3u8
+
+#EXTINF:-1 tvg-logo="https://i.ibb.co/k6hpzxkN/Pop-Corn.png" group-title="TV || 24/7 CINE", CINE PPV LATINOS 4
+http://fivetv.org:25461/live/B78N65/N3421U/75175.m3u8
+
+#EXTINF:-1 tvg-logo="https://i.ibb.co/k6hpzxkN/Pop-Corn.png" group-title="TV || 24/7 CINE", CINE PPV LATINOS 5
+http://fivetv.org:25461/live/B78N65/N3421U/75177.m3u8
+
+#EXTINF:-1 tvg-logo="https://i.ibb.co/k6hpzxkN/Pop-Corn.png" group-title="TV || 24/7 CINE", CINE PPV LATINOS 6
+http://fivetv.org:25461/live/B78N65/N3421U/75178.m3u8
+
+#EXTINF:-1 tvg-logo="https://i.ibb.co/8Nwxh6T/cinema.png" group-title="TV || 24/7 CINE", 24/7 CINEMA (DISNEY LIVE)
+http://fivetv.org:25461/live/B78N65/N3421U/139693.m3u8
+
+#EXTINF:-1 tvg-logo="https://i.ibb.co/8Nwxh6T/cinema.png" group-title="TV || 24/7 CINE", 24/7 CINEMA (NETFLIX)
+http://fivetv.org:25461/live/B78N65/N3421U/139694.m3u8
+
+#EXTINF:-1 tvg-logo="https://i.ibb.co/8Nwxh6T/cinema.png" group-title="TV || 24/7 CINE", 24/7 CINEMA (STAR+)
+http://fivetv.org:25461/live/B78N65/N3421U/139695.m3u8
+
+#EXTINF:-1 tvg-logo="https://i.ibb.co/8Nwxh6T/cinema.png" group-title="TV || 24/7 CINE", 24/7 CINEMA (DISNEY+)
+http://fivetv.org:25461/live/B78N65/N3421U/139696.m3u8
+
+#EXTINF:-1 tvg-logo="https://i.ibb.co/8Nwxh6T/cinema.png" group-title="TV || 24/7 CINE", 24/7 CINEMA (PARAMOUNT+)
+http://fivetv.org:25461/live/B78N65/N3421U/139697.m3u8
+
+#EXTINF:-1 tvg-logo="https://i.ibb.co/k6hpzxkN/Pop-Corn.png" group-title="TV || 24/7 CINE", CINEMA FAMILIA
+http://fivetv.org:25461/live/B78N65/N3421U/139699.m3u8
+
+#EXTINF:-1 tvg-logo="https://i.ibb.co/k6hpzxkN/Pop-Corn.png" group-title="TV || 24/7 CINE", CINEMA TERROR
+http://fivetv.org:25461/live/B78N65/N3421U/139701.m3u8
+
+#EXTINF:-1 tvg-logo="https://i.ibb.co/W5SCmVc/images-1.png" group-title="TV || 24/7 CINE", CLASICOS DE DISNEY
+http://fivetv.org:25461/live/B78N65/N3421U/139702.m3u8
+
+#EXTINF:-1 tvg-logo="http://miarea.vip:8080/images/b26c430b77563771ebc075c349a1e9d2.png" group-title="TV || 24/7 CINE", CINE NETFLIX 1
+http://fivetv.org:25461/live/B78N65/N3421U/176198.m3u8
+
+#EXTINF:-1 tvg-logo="http://miarea.vip:8080/images/9f292e1a35dc6ae083b558c76796a386.png" group-title="TV || 24/7 CINE", CINE NETFLIX 2
+http://fivetv.org:25461/live/B78N65/N3421U/176199.m3u8
+
+#EXTINF:-1 tvg-logo="http://miarea.vip:8080/images/e584c0392a72284e0a6db6f24a5307fe.png" group-title="TV || 24/7 CINE", CINE NETFLIX 3
+http://fivetv.org:25461/live/B78N65/N3421U/176200.m3u8
+
+#EXTINF:-1 tvg-logo="http://miarea.vip:8080/images/341cb746a182ce7794a01554edb5d600.png" group-title="TV || 24/7 CINE", CINE NETFLIX 4
+http://fivetv.org:25461/live/B78N65/N3421U/176201.m3u8
+
+#EXTINF:-1 tvg-logo="http://miarea.vip:8080/images/50b07b9f0c5e702bdcec7e3626645149.png" group-title="TV || 24/7 CINE", CINE NETFLIX 5
+http://fivetv.org:25461/live/B78N65/N3421U/176202.m3u8
+
+#EXTINF:-1 tvg-logo="http://miarea.vip:8080/images/e05883a56570cbdd96af5d715b197fd7.png" group-title="TV || 24/7 CINE", CINE NETFLIX 6
+http://fivetv.org:25461/live/B78N65/N3421U/176203.m3u8
+
+#EXTINF:-1 tvg-logo="http://miarea.vip:8080/images/1b7552bcff0edef542970672608c35b6.png" group-title="TV || 24/7 CINE", CINE NETFLIX 7
+http://fivetv.org:25461/live/B78N65/N3421U/176204.m3u8
+
+#EXTINF:-1 tvg-logo="http://miarea.vip:8080/images/0db817b6729c1fc9f8df4d501055a3f0.png" group-title="TV || 24/7 CINE", CINE NETFLIX 8
+http://fivetv.org:25461/live/B78N65/N3421U/176205.m3u8
+
+#EXTINF:-1 tvg-logo="https://i.postimg.cc/YC4w600j/zombie.png" group-title="TV || 24/7 CINE", 24/7 ZOMBIE
+http://fivetv.org:25461/live/B78N65/N3421U/181926.m3u8
+
+#EXTINF:-1 tvg-logo="https://i.postimg.cc/kgSxRNQ4/tERROR.png" group-title="TV || 24/7 CINE", 24/7 TERROR
+http://fivetv.org:25461/live/B78N65/N3421U/181927.m3u8
+
+#EXTINF:-1 tvg-logo="https://i.postimg.cc/vZJ3CNmG/WALKING.png" group-title="TV || 24/7 CINE", 24/7 THE WALKING DEAD
+http://fivetv.org:25461/live/B78N65/N3421U/181928.m3u8
+
+#EXTINF:-1 tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/cTRUcUnAydqboYfis0IhhY1edDt.jpg" group-title="TV || 24/7 CINE", 24/7 SCREAM
+http://fivetv.org:25461/live/B78N65/N3421U/181929.m3u8
+
+#EXTINF:-1 tvg-logo="https://i.postimg.cc/2jZqjjrd/SAGAS.png" group-title="TV || 24/7 CINE", 24/7 SAGAS
+http://fivetv.org:25461/live/B78N65/N3421U/181930.m3u8
+
+#EXTINF:-1 tvg-logo="https://images.pluto.tv/channels/5dd7ea2aeab5230009986735/colorLogoPNG.png" group-title="TV || 24/7 CINE", 24/7 ROMANCE
+http://fivetv.org:25461/live/B78N65/N3421U/181931.m3u8
+
+#EXTINF:-1 tvg-logo="https://i.ibb.co/kmbwWWv/descarga.png" group-title="TV || 24/7 CINE", CINE DISNEY+
+http://fivetv.org:25461/live/B78N65/N3421U/185032.m3u8
+
+#EXTINF:-1 tvg-logo="https://i.ibb.co/tbpK2zf/descarga.png" group-title="TV || 24/7 CINE", CINE PARAMOUNT+
+http://fivetv.org:25461/live/B78N65/N3421U/185034.m3u8
+
+#EXTINF:-1 tvg-logo="https://i.ibb.co/7dPY6Tdq/Star-Cinema.png" group-title="TV || 24/7 CINE", CINE STAR+ 1
+http://fivetv.org:25461/live/B78N65/N3421U/185035.m3u8
+
+#EXTINF:-1 tvg-logo="https://i.ibb.co/7dPY6Tdq/Star-Cinema.png" group-title="TV || 24/7 CINE", CINE STAR+ 2
+http://fivetv.org:25461/live/B78N65/N3421U/333315.m3u8
+
+#EXTINF:-1 tvg-logo="https://i.ibb.co/7dPY6Tdq/Star-Cinema.png" group-title="TV || 24/7 CINE", CINE STAR+ 3
+http://fivetv.org:25461/live/B78N65/N3421U/333316.m3u8
+
+#EXTINF:-1 tvg-logo="https://i.ibb.co/7dPY6Tdq/Star-Cinema.png" group-title="TV || 24/7 CINE", CINE STAR+ 4
+http://fivetv.org:25461/live/B78N65/N3421U/333317.m3u8
+
+#EXTINF:-1 tvg-logo="https://i.ibb.co/7dPY6Tdq/Star-Cinema.png" group-title="TV || 24/7 CINE", CINE STAR+ KIDS
+http://fivetv.org:25461/live/B78N65/N3421U/333318.m3u8
+
+#EXTINF:-1 tvg-logo="https://i.ibb.co/mCDYCqkK/Sky-Premiere-2.png" group-title="TV || 24/7 CINE", SKY PREMIERE 1
+http://fivetv.org:25461/live/B78N65/N3421U/333320.m3u8
+
+#EXTINF:-1 tvg-logo="https://i.ibb.co/mCDYCqkK/Sky-Premiere-2.png" group-title="TV || 24/7 CINE", SKY KIDS 1
+http://fivetv.org:25461/live/B78N65/N3421U/333322.m3u8
+
+#EXTINF:-1 tvg-logo="https://i.ibb.co/mCDYCqkK/Sky-Premiere-2.png" group-title="TV || 24/7 CINE", SKY KIDS 2
+http://fivetv.org:25461/live/B78N65/N3421U/333323.m3u8
+
+#EXTINF:-1 tvg-logo="https://i.ibb.co/mCDYCqkK/Sky-Premiere-2.png" group-title="TV || 24/7 CINE", SKY PREMIERE 2
+http://fivetv.org:25461/live/B78N65/N3421U/333324.m3u8
+
+#EXTINF:-1 tvg-logo="https://i.ibb.co/mCDYCqkK/Sky-Premiere-2.png" group-title="TV || 24/7 CINE", SKY PREMIERE 3
+http://fivetv.org:25461/live/B78N65/N3421U/333325.m3u8
+
+#EXTINF:-1 tvg-logo="https://i.ibb.co/mCDYCqkK/Sky-Premiere-2.png" group-title="TV || 24/7 CINE", SKY PREMIERE 4
+http://fivetv.org:25461/live/B78N65/N3421U/333326.m3u8
+
+#EXTINF:-1 tvg-logo="https://i.postimg.cc/3NJPST2G/HBO-Movies.png" group-title="TV || 24/7 CINE", MOVIES HBO (01)
+http://fivetv.org:25461/live/B78N65/N3421U/339992.m3u8
+
+#EXTINF:-1 tvg-logo="https://i.postimg.cc/3NJPST2G/HBO-Movies.png" group-title="TV || 24/7 CINE", MOVIES HBO (02)
+http://fivetv.org:25461/live/B78N65/N3421U/339993.m3u8
+
+#EXTINF:-1 tvg-logo="https://i.postimg.cc/3NJPST2G/HBO-Movies.png" group-title="TV || 24/7 CINE", MOVIES HBO (03)
+http://fivetv.org:25461/live/B78N65/N3421U/339994.m3u8
+
+#EXTINF:-1 tvg-logo="https://i.postimg.cc/3NJPST2G/HBO-Movies.png" group-title="TV || 24/7 CINE", MOVIES HBO (04)
+http://fivetv.org:25461/live/B78N65/N3421U/339995.m3u8
+
+#EXTINF:-1 tvg-logo="https://i.postimg.cc/3NJPST2G/HBO-Movies.png" group-title="TV || 24/7 CINE", MOVIES HBO (05)
+http://fivetv.org:25461/live/B78N65/N3421U/339996.m3u8
+
+#EXTINF:-1 tvg-logo="https://i.postimg.cc/3NJPST2G/HBO-Movies.png" group-title="TV || 24/7 CINE", MOVIES HBO (06)
+http://fivetv.org:25461/live/B78N65/N3421U/339997.m3u8
+
+#EXTINF:-1 tvg-logo="https://i.postimg.cc/3NJPST2G/HBO-Movies.png" group-title="TV || 24/7 CINE", MOVIES HBO (07) (BATMAN)
+http://fivetv.org:25461/live/B78N65/N3421U/339998.m3u8
+
