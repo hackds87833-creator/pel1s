@@ -1,0 +1,58 @@
+#EXTM3U
+
+
+#EXTINF:-1 tvg-logo="https://i.ibb.co/MWVsHKq/chucky.png" group-title="TV || 24/7 SERIES", 24/7 | CHUCKY
+http://fivetv.org:25461/live/B78N65/N3421U/23852.m3u8
+
+#EXTINF:-1 tvg-logo="https://i.ibb.co/tJc50WH/imagen.png" group-title="TV || 24/7 SERIES", 24/7 | ALF
+http://fivetv.org:25461/live/B78N65/N3421U/23940.m3u8
+
+#EXTINF:-1 tvg-logo="https://images5.alphacoders.com/407/thumb-1920-407425.png" group-title="TV || 24/7 SERIES", 24/7 | MALCOLM EL DEL MEDIO
+http://fivetv.org:25461/live/B78N65/N3421U/23974.m3u8
+
+#EXTINF:-1 tvg-logo="https://imagenesparapeques.com/wp-content/uploads/2022/12/Logo-merlina-Addams.png" group-title="TV || 24/7 SERIES", 24/7 | MERLINA
+http://fivetv.org:25461/live/B78N65/N3421U/25159.m3u8
+
+#EXTINF:-1 tvg-logo="https://i.ibb.co/C3jjzb1B/La-casa-del-dragon.png" group-title="TV || 24/7 SERIES", 24/7 | LA CASA DEL DRAGON
+http://fivetv.org:25461/live/B78N65/N3421U/25163.m3u8
+
+#EXTINF:-1 tvg-logo="https://i.ibb.co/HXLthDJ/imagen.png" group-title="TV || 24/7 SERIES", 24/7 | LA FAMILIA PELUCHE
+http://fivetv.org:25461/live/B78N65/N3421U/25195.m3u8
+
+#EXTINF:-1 tvg-logo="https://i.ibb.co/HG4yScF/Sin-t-tulo-2.png" group-title="TV || 24/7 SERIES", 24/7 | CASO CERRADO
+http://fivetv.org:25461/live/B78N65/N3421U/25636.m3u8
+
+#EXTINF:-1 tvg-logo="http://miarea.vip:8080/images/3c0775a906a0e93bb52a858a9d4f083b.png" group-title="TV || 24/7 SERIES", 24/7 | CANTINFLAS
+http://fivetv.org:25461/live/B78N65/N3421U/28069.m3u8
+
+#EXTINF:-1 tvg-logo="https://i.postimg.cc/P5g6tPX4/American-Horror-Story.png" group-title="TV || 24/7 SERIES", 24/7 | AMERICA HORROR STORY
+http://fivetv.org:25461/live/B78N65/N3421U/101570.m3u8
+
+#EXTINF:-1 tvg-logo="https://i.ibb.co/BTzvzbP/pngwing-com-4.png" group-title="TV || 24/7 SERIES", 24/7 | THE MANDALORIAN
+http://fivetv.org:25461/live/B78N65/N3421U/139703.m3u8
+
+#EXTINF:-1 tvg-logo="https://i.postimg.cc/ZRhqmFvL/The-Walking-Dead-Logo.png" group-title="TV || 24/7 SERIES", 24/7 | THE WALKING DEAD
+http://fivetv.org:25461/live/B78N65/N3421U/139704.m3u8
+
+#EXTINF:-1 tvg-logo="https://i.ibb.co/Jxkk7nY/peaky.png" group-title="TV || 24/7 SERIES", 24/7 | PEAKY BLINDERS
+http://fivetv.org:25461/live/B78N65/N3421U/182136.m3u8
+
+#EXTINF:-1 tvg-logo="https://dark.netflix.io/share/global.png" group-title="TV || 24/7 SERIES", 24/7 | DARK
+http://fivetv.org:25461/live/B78N65/N3421U/182138.m3u8
+
+#EXTINF:-1 tvg-logo="https://i.ibb.co/DCfhSFH/pngegg-4.png" group-title="TV || 24/7 SERIES", 24/7 | MERLIN
+http://fivetv.org:25461/live/B78N65/N3421U/182139.m3u8
+
+#EXTINF:-1 tvg-logo="https://i.ibb.co/4nNJZ9X3/Laura.png" group-title="TV || 24/7 SERIES", 24/7 | LAURA BOZZO
+http://fivetv.org:25461/live/B78N65/N3421U/186867.m3u8
+
+#EXTINF:-1 tvg-logo="https://cdn-s3.sidereel.com/tv_shows/52895/giant_2x/papa.png" group-title="TV || 24/7 SERIES", 24/7 | LA HORA PICO
+http://fivetv.org:25461/live/B78N65/N3421U/186868.m3u8
+
+#EXTINF:-1 tvg-logo="https://i.ibb.co/dMQ24v6/simpson.png" group-title="TV || 24/7 SERIES", 24/7 | LOS SIMPSONS
+http://fivetv.org:25461/live/B78N65/N3421U/186869.m3u8
+
+#EXTINF:-1 tvg-logo="https://i.ibb.co/ZSLwgBh/Doctor.png" group-title="TV || 24/7 SERIES", 24/7 | THE GOOD DOCTOR
+http://fivetv.org:25461/live/B78N65/N3421U/186870.m3u8
+
+
